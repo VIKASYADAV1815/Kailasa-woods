@@ -6,9 +6,7 @@ import Accommodations from "@/components/home/Accommodations";
 import VideoExperience from "@/components/home/VideoExperience";
 import Gallery from "@/components/home/Gallery";
 import Amenities from "@/components/home/Amenities";
-import GuestJournal from "@/components/home/GuestJournal";
 import LocationReachUs from "@/components/home/LocationReachUs";
-import FAQ from "@/components/home/FAQ";
 import Footer from "@/components/footer/Footer";
 
 export default function Home() {
