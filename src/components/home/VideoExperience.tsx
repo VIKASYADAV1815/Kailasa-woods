@@ -32,12 +32,9 @@ export default function VideoExperience() {
   return (
     <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
       <motion.div style={{ y, scale }} className="absolute inset-0 w-full h-[140%] -top-[20%]">
-        <video
-          src="https://www.pexels.com/download/video/4928671/"
-          autoPlay
-          muted
-          loop
-          playsInline
+        <img
+          src="/videoimg.jpg"
+          alt="Kailasa Temple Heritage"
           className="w-full h-full object-cover opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80 z-10" />

@@ -22,7 +22,7 @@ export default function Hero() {
       >
         <div className="absolute inset-0 bg-black/30 z-10" />
         <img
-          src="https://images.unsplash.com/photo-1679984743278-1e325c4c899a?q=80&w=1170&auto=format&fit=crop"
+          src="/hero.jpg"
           alt="Luxury Farm Stay"
           className="h-full w-full object-cover"
         />

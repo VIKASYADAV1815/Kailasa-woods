@@ -7,19 +7,13 @@ const accommodations = [
   {
     title: "The Family Room",
     description: "Located in our Greek Architecture old charm house, crowned with sloping roofs that echo the rhythm of the hills. The architecture blends nature with spatial grandeur, featuring old world colonial interiors, and a high ceiling drawing room that invites light and air to dance freely through the space.",
-    image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop",
+    image: "/family.jpg",
     details: "Greek Architecture • Colonial Interiors"
-  },
-  {
-    title: "The Amazon Bus",
-    description: "A unique theme-based concept living experience. Surrounded by beautiful gardens and organic grown vegetables, offering stunning views of the manicured landscape. From the edges, your gaze stretches towards the Mussoorie mountains, their misty silhouettes rising like a sacred hymn to the sky.",
-    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1200&auto=format&fit=crop",
-    details: "Theme Based • Mountain Views"
   },
   {
     title: "The Bamboo Cottage",
     description: "A Deodar Wood Cottage set amidst a lush bamboo forest. Constructed keeping in mind the authenticity of natural materials, offering a living connection to nature. Stunning views of either the manicured garden, the forest trees or our farm vegetables.",
-    image: "https://images.unsplash.com/photo-1587061949409-02df41d5e562?q=80&w=1200&auto=format&fit=crop",
+    image: "/room2.jpg",
     details: "Deodar Wood • Bamboo Forest"
   },
 ];

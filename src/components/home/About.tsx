@@ -60,7 +60,7 @@ export default function About() {
           </div>
 
           {/* Video Content */}
-          <RightVideos videos={["/v1.mp4", "/v2.mp4"]} />
+          <RightVideos videos={["/v2.mp4"]} />
 
         </div>
       </div>
