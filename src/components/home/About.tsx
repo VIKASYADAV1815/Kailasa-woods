@@ -1,19 +1,12 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import RightVideos from "./RightVideos";
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["-25%", "25%"]);
 
   return (
     <section id="stay" className="py-24 md:py-32 px-6 md:px-12 bg-kw-offwhite text-kw-forest relative overflow-hidden">
@@ -66,24 +59,8 @@ export default function About() {
             </motion.div>
           </div>
 
-          {/* Image Content */}
-          <div ref={containerRef} className="w-full lg:w-7/12 relative h-[80vh] min-h-[600px] overflow-hidden rounded-sm group">
-            <motion.div
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-0 w-full h-[150%] -top-[25%]"
-              style={{ y }}
-            >
-              <img
-                src="https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=1200&auto=format&fit=crop"
-                alt="Property View"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </motion.div>
-            {/* Subtle premium border frame inside */}
-            <div className="absolute inset-4 border border-white/20 z-10 pointer-events-none mix-blend-overlay transition-all duration-500 group-hover:inset-6" />
-          </div>
+          {/* Video Content */}
+          <RightVideos videos={["/v1.mp4", "/v2.mp4"]} />
 
         </div>
       </div>
