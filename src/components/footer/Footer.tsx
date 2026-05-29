@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -21,28 +20,28 @@ export default function Footer() {
             <h3 className="uppercase tracking-widest text-sm text-kw-sage mb-6">Explore</h3>
             <ul className="space-y-4">
               <li>
-                <Link href="/about" className="text-kw-offwhite/80 hover:text-kw-offwhite transition-colors relative group inline-block">
+                <div className="text-kw-offwhite/40 cursor-not-allowed relative group inline-block">
                   About Us
                   <span className="absolute bottom-0 left-0 w-full h-px bg-kw-offwhite transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
-                </Link>
+                </div>
               </li>
               <li>
-                <Link href="/stay" className="text-kw-offwhite/80 hover:text-kw-offwhite transition-colors relative group inline-block">
+                <div className="text-kw-offwhite/40 cursor-not-allowed relative group inline-block">
                   The Stay
                   <span className="absolute bottom-0 left-0 w-full h-px bg-kw-offwhite transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
-                </Link>
+                </div>
               </li>
               <li>
-                <Link href="/gallery" className="text-kw-offwhite/80 hover:text-kw-offwhite transition-colors relative group inline-block">
+                <div className="text-kw-offwhite/40 cursor-not-allowed relative group inline-block">
                   Gallery
                   <span className="absolute bottom-0 left-0 w-full h-px bg-kw-offwhite transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
-                </Link>
+                </div>
               </li>
               <li>
-                <Link href="/contact" className="text-kw-offwhite/80 hover:text-kw-offwhite transition-colors relative group inline-block">
+                <div className="text-kw-offwhite/40 cursor-not-allowed relative group inline-block">
                   Contact Us
                   <span className="absolute bottom-0 left-0 w-full h-px bg-kw-offwhite transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
-                </Link>
+                </div>
               </li>
             </ul>
           </div>
@@ -51,21 +50,21 @@ export default function Footer() {
             <h3 className="uppercase tracking-widest text-sm text-kw-sage mb-6">Contact</h3>
             <ul className="space-y-4 text-kw-offwhite/80">
               <li>
-                <a href="https://maps.app.goo.gl/zytAeMaRPJ1ZDJqu5" target="_blank" rel="noopener noreferrer" className="hover:text-kw-offwhite transition-colors">
+                <div className="text-kw-offwhite/40 cursor-not-allowed">
                   Kailasa Woods, Mulberry Farms,<br />
                   Bharatwala, Bisht Gaon<br />
                   Dehradun, Uttarakhand<br />
                   248003
-                </a>
+                </div>
               </li>
               <li>
-                <a href="mailto:kailasawoodsfarmstay@gmail.com" className="hover:text-kw-offwhite transition-colors">kailasawoodsfarmstay@gmail.com</a>
+                <div className="text-kw-offwhite/40 cursor-not-allowed">kailasawoodsfarmstay@gmail.com</div>
               </li>
               <li>
-                <a href="tel:+918954848480" className="hover:text-kw-offwhite transition-colors">+91 8954848480</a>
+                <div className="text-kw-offwhite/40 cursor-not-allowed">+91 8954848480</div>
               </li>
               <li>
-                <a href="tel:+919639999919" className="hover:text-kw-offwhite transition-colors">+91 9639999919</a>
+                <div className="text-kw-offwhite/40 cursor-not-allowed">+91 9639999919</div>
               </li>
             </ul>
           </div>
@@ -91,8 +90,8 @@ export default function Footer() {
           <div className="w-full flex flex-col md:flex-row justify-between items-center text-sm text-kw-offwhite/50 tracking-widest uppercase mt-12 pb-6 px-2">
             <p>&copy; {new Date().getFullYear()} Kailasa Woods.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="https://www.instagram.com/kailasawoods?igsh=ZThoN2FsZWd4cnBz" target="_blank" rel="noopener noreferrer" className="hover:text-kw-offwhite transition-colors">Instagram</a>
-              <a href="#" className="hover:text-kw-offwhite transition-colors">Facebook</a>
+              <div className="text-kw-offwhite/40 cursor-not-allowed">Instagram</div>
+              <div className="text-kw-offwhite/40 cursor-not-allowed">Facebook</div>
             </div>
             <p className="mt-4 md:mt-0">All Rights Reserved.</p>
           </div>
