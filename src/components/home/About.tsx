@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import RightVideos from "./RightVideos";
+import Link from "next/link";
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
@@ -50,17 +50,33 @@ export default function About() {
                 Set within a 45,000 sq. ft estate, this farm stay offers 12,000 sq. ft of elegant construction, theme based concept living be it our Amazon Bus, Deodar Wood Cottage in Bamboo forest or our own Family Room in our Greek Architecture old charm house, crowned with sloping roofs that echo the rhythm of the hills.
               </p>
               
-              <motion.button 
-                whileHover={{ x: 5 }}
-                className="mt-6 uppercase tracking-widest text-xs font-bold border-b border-kw-forest pb-1 hover:text-kw-sage hover:border-kw-sage transition-all duration-300"
-              >
-                Discover the Estate
-              </motion.button>
+              <Link href="/about">
+                <motion.button 
+                  whileHover={{ x: 5 }}
+                  className="mt-6 uppercase tracking-widest text-xs font-bold border-b border-kw-forest pb-1 hover:text-kw-sage hover:border-kw-sage transition-all duration-300"
+                >
+                  Discover the Estate
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
 
-          {/* Video Content */}
-          <RightVideos videos={["/v2.mp4"]} />
+          {/* Image Content */}
+          <div className="w-full lg:w-7/12 relative ml-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="relative w-full h-80 md:h-162.5 overflow-hidden rounded-sm bg-black group"
+            >
+              <img 
+                src="/about.jpeg" 
+                alt="The Experience" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 border border-white/10 pointer-events-none mix-blend-overlay" />
+            </motion.div>
+          </div>
 
         </div>
       </div>

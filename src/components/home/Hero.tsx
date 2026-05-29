@@ -22,9 +22,14 @@ export default function Hero() {
       >
         <div className="absolute inset-0 bg-black/30 z-10" />
         <img
-          src="/hero.jpg"
-          alt="Luxury Farm Stay"
-          className="h-full w-full object-cover"
+          src="/desktop.jpeg"
+          alt="Luxury Farm Stay Desktop"
+          className="hidden md:block h-full w-full object-cover"
+        />
+        <img
+          src="/mobile.jpeg"
+          alt="Luxury Farm Stay Mobile"
+          className="md:hidden h-full w-full object-cover"
         />
       </motion.div>
 
@@ -36,7 +41,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-kw-offwhite/80 uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm lg:text-base mb-6 max-w-[80vw]"
+          className="hidden text-kw-offwhite/80 uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm lg:text-base mb-6 max-w-[80vw]"
         >
           A Farm to Table Luxury Farm Stay
         </motion.p>
@@ -45,7 +50,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-kw-offwhite tracking-tight mb-8 drop-shadow-lg"
+          className="hidden font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-kw-offwhite tracking-tight mb-8 drop-shadow-lg"
         >
           Kailasa Woods
         </motion.h1>
@@ -54,7 +59,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex gap-4"
+          className="hidden gap-4"
         >
           <motion.button 
             whileHover={{ scale: 1.05, y: -5 }}
@@ -67,22 +72,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2"
-      >
-        <span className="text-kw-offwhite/60 text-xs uppercase tracking-widest">Scroll</span>
-        <div className="w-[1px] h-16 bg-kw-offwhite/30 overflow-hidden relative">
-          <motion.div
-            animate={{ y: ["-100%", "100%"] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-            className="absolute inset-0 w-full h-full bg-kw-offwhite"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

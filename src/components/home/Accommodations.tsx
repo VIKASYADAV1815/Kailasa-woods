@@ -2,21 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-
-const accommodations = [
-  {
-    title: "The Family Room",
-    description: "Located in our Greek Architecture old charm house, crowned with sloping roofs that echo the rhythm of the hills. The architecture blends nature with spatial grandeur, featuring old world colonial interiors, and a high ceiling drawing room that invites light and air to dance freely through the space.",
-    image: "/family.jpg",
-    details: "Greek Architecture • Colonial Interiors"
-  },
-  {
-    title: "The Bamboo Cottage",
-    description: "A Deodar Wood Cottage set amidst a lush bamboo forest. Constructed keeping in mind the authenticity of natural materials, offering a living connection to nature. Stunning views of either the manicured garden, the forest trees or our farm vegetables.",
-    image: "/room2.jpg",
-    details: "Deodar Wood • Bamboo Forest"
-  },
-];
+import Link from "next/link";
+import { staysData as accommodations } from "@/data/stays";
 
 const roomAmenities = [
   "A cozy bed", "Smart TV", "Wifi", "Living Area", "Dining area", "Kitchenette", "Hot and Cold Air Conditioner", "Geyser", "Intercom"
@@ -48,7 +35,7 @@ export default function Accommodations() {
           return (
             <div 
               key={index}
-              className="md:sticky md:top-0 min-h-screen md:h-screen w-full flex flex-col-reverse md:flex-row bg-kw-beige overflow-hidden border-t border-kw-forest/10"
+              className="md:sticky md:top-0 min-h-screen md:h-screen w-full flex flex-col md:flex-row bg-kw-beige overflow-hidden border-t border-kw-forest/10"
               style={{ zIndex: index + 10 }}
             >
               {/* Text Side */}
@@ -60,7 +47,7 @@ export default function Accommodations() {
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <span className="text-kw-sage tracking-widest font-mono text-sm">0{index + 1}</span>
-                    <div className="h-[1px] w-12 bg-kw-sage/50" />
+                    <div className="h-px w-12 bg-kw-sage/50" />
                     <span className="text-xs uppercase tracking-widest text-kw-forest/50">{item.details}</span>
                   </div>
                   <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-8">
@@ -82,28 +69,30 @@ export default function Accommodations() {
                     </ul>
                   </div>
 
-                  <motion.button 
-                    whileHover={{ scale: 1.05, x: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="relative group overflow-hidden border-b border-kw-forest pb-1 uppercase tracking-widest text-xs font-bold w-fit"
-                  >
-                    <span className="relative z-10 group-hover:text-kw-sage transition-colors duration-300">
-                      Reserve this room
-                    </span>
-                  </motion.button>
+                  <Link href={`/stay`}>
+                    <motion.button 
+                      whileHover={{ scale: 1.05, x: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="relative group overflow-hidden border-b border-kw-forest pb-1 uppercase tracking-widest text-xs font-bold w-fit"
+                    >
+                      <span className="relative z-10 group-hover:text-kw-sage transition-colors duration-300">
+                        View Details
+                      </span>
+                    </motion.button>
+                  </Link>
                 </motion.div>
               </div>
               
               {/* Image Side with Parallax */}
-              <div className="w-full md:w-1/2 relative h-[50vh] min-h-[400px] md:h-full overflow-hidden z-10">
+              <div className="w-full md:w-1/2 relative h-[50vh] min-h-100 md:h-full overflow-hidden z-10">
                 <motion.div 
-                  className="absolute inset-0 w-full h-[130%] -top-[15%] hidden md:block"
+                  className="absolute inset-0 w-full h-[130%] top-[-15%] hidden md:block"
                   style={{
                     y: useTransform(scrollYProgress, [Math.max(0, (index - 1) / accommodations.length), (index + 1) / accommodations.length], ["-15%", "15%"])
                   }}
                 >
                   <img 
-                    src={item.image} 
+                    src={item.heroImage} 
                     alt={item.title}
                     className="w-full h-full object-cover"
                   />
@@ -113,7 +102,7 @@ export default function Accommodations() {
                 {/* Mobile static image without parallax to prevent layout issues */}
                 <div className="absolute inset-0 w-full h-full md:hidden block">
                   <img 
-                    src={item.image} 
+                    src={item.heroImage} 
                     alt={item.title}
                     className="w-full h-full object-cover"
                   />

@@ -31,13 +31,13 @@ export default function VideoExperience() {
 
   return (
     <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
-      <motion.div style={{ y, scale }} className="absolute inset-0 w-full h-[140%] -top-[20%]">
+      <motion.div style={{ y, scale }} className="absolute inset-0 w-full h-[140%] top-[-20%]">
         <img
           src="/videoimg.jpg"
           alt="Kailasa Temple Heritage"
           className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80 z-10" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/20 to-black/80 z-10" />
       </motion.div>
       
       <div className="relative z-20 w-full max-w-5xl px-6 text-center">

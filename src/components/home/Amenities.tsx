@@ -5,15 +5,14 @@ import { useState } from "react";
 
 const amenitiesList = [
   { name: "Swimming pool", img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=800&auto=format&fit=crop" },
-  { name: "Gym", img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" },
-  { name: "Recreation Area (Pool Table, T.T. Table, Carrom, Dart, Board Games)", img: "https://images.unsplash.com/photo-1609726494499-27d3e942456c?q=80&w=800&auto=format&fit=crop" },
+  { name: "Gym", img: "/gym/g (3).webp" },
+  { name: "Recreation Area (Pool Table, T.T. Table, Carrom, Dart, Board Games)", img: "/gym/g (1).webp" },
   { name: "Library", img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=800&auto=format&fit=crop" },
   { name: "Yoga Deck", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" },
   { name: "Wi-Fi", img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop" },
   { name: "100% power backup", img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop" },
   { name: "Car Park", img: "https://images.unsplash.com/photo-1470224114660-3f6686c562eb?q=80&w=800&auto=format&fit=crop" },
-  { name: "Signature Vegetarian Food (farm grown vegetables and fruits)", img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop" },
-  { name: "Bon Fire", img: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800&auto=format&fit=crop" },
+  { name: "Bon Fire", img: "/mandir bonfire/_DSC8779.JPG" },
 ];
 
 const containerVariants: Variants = {
@@ -109,9 +108,9 @@ export default function Amenities() {
                   onMouseEnter={() => setHoveredIndex(index)}
                   className="relative flex items-center gap-4 py-4 cursor-pointer group"
                 >
-                  <div className="absolute bottom-0 left-0 w-full h-[1px] bg-kw-forest/10" />
+                  <div className="absolute bottom-0 left-0 w-full h-px bg-kw-forest/10" />
                   <motion.div 
-                    className="absolute bottom-0 left-0 h-[1px] bg-kw-forest origin-left"
+                    className="absolute bottom-0 left-0 h-px bg-kw-forest origin-left"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}

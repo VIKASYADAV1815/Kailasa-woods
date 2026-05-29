@@ -26,7 +26,7 @@ export default function LocationReachUs() {
       
       {/* Left Content (Text) */}
       <div ref={ref} className="w-full lg:w-1/2 py-10 md:py-16 lg:py-20 flex justify-center lg:justify-end relative z-10 bg-kw-beige">
-        <div className="w-full max-w-[640px] px-6 md:px-12 lg:pr-16 lg:pl-12 flex flex-col justify-center">
+        <div className="w-full max-w-160 px-6 md:px-12 lg:pr-16 lg:pl-12 flex flex-col justify-center">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -48,7 +48,7 @@ export default function LocationReachUs() {
             
             <motion.div variants={itemVariants} className="flex flex-col gap-5 mt-2">
               <div className="flex flex-col group">
-                <div className="w-10 h-[1px] bg-kw-sage/50 group-hover:bg-kw-sage group-hover:w-16 transition-all duration-500 mb-2" />
+                <div className="w-10 h-px bg-kw-sage/50 group-hover:bg-kw-sage group-hover:w-16 transition-all duration-500 mb-2" />
                 <div>
                   <h4 className="uppercase tracking-widest text-[10px] text-kw-sage mb-1 font-bold">From Dehradun Airport</h4>
                   <p className="text-xl md:text-2xl font-serif text-kw-forest">~ 35 km <span className="text-xs font-sans text-kw-forest/60 ml-2">/ 60 mins drive</span></p>
@@ -56,7 +56,7 @@ export default function LocationReachUs() {
               </div>
 
               <div className="flex flex-col group">
-                <div className="w-10 h-[1px] bg-kw-sage/50 group-hover:bg-kw-sage group-hover:w-16 transition-all duration-500 mb-2" />
+                <div className="w-10 h-px bg-kw-sage/50 group-hover:bg-kw-sage group-hover:w-16 transition-all duration-500 mb-2" />
                 <div>
                   <h4 className="uppercase tracking-widest text-[10px] text-kw-sage mb-1 font-bold">From Dehradun Station</h4>
                   <p className="text-xl md:text-2xl font-serif text-kw-forest">~ 12 km <span className="text-xs font-sans text-kw-forest/60 ml-2">/ 35 mins drive</span></p>
@@ -64,19 +64,29 @@ export default function LocationReachUs() {
               </div>
 
               <div className="flex flex-col group">
-                <div className="w-10 h-[1px] bg-kw-sage/50 group-hover:bg-kw-sage group-hover:w-16 transition-all duration-500 mb-2" />
+                <div className="w-10 h-px bg-kw-sage/50 group-hover:bg-kw-sage group-hover:w-16 transition-all duration-500 mb-2" />
                 <div>
                   <h4 className="uppercase tracking-widest text-[10px] text-kw-sage mb-1 font-bold">From Mussoorie</h4>
                   <p className="text-xl md:text-2xl font-serif text-kw-forest">~ 25 km <span className="text-xs font-sans text-kw-forest/60 ml-2">/ 50 mins drive</span></p>
                 </div>
               </div>
             </motion.div>
+            <motion.div variants={itemVariants} className="mt-6">
+              <a 
+                href="https://maps.app.goo.gl/zytAeMaRPJ1ZDJqu5" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 uppercase tracking-widest text-xs font-bold border-b border-kw-forest pb-1 hover:text-kw-sage hover:border-kw-sage transition-all duration-300"
+              >
+                Open in Google Maps
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </div>
 
       {/* Right Content (Map - Fully Filled) */}
-      <div className="w-full lg:w-1/2 h-[350px] md:h-[450px] lg:h-auto relative z-0">
+      <div className="w-full lg:w-1/2 h-87.5 md:h-112.5 lg:h-auto relative z-0">
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
