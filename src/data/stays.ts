@@ -4,7 +4,7 @@ export const staysData = [
     title: "The Family Room",
     description: "Located in our Greek Architecture old charm house, crowned with sloping roofs that echo the rhythm of the hills. The architecture blends nature with spatial grandeur, featuring old world colonial interiors, and a high ceiling drawing room that invites light and air to dance freely through the space.",
     fullDescription: "Step into an era of colonial elegance with The Family Room. Nestled within our Greek Architecture old charm house, this spacious room features a high-ceiling drawing room that lets light and air dance freely. It's crowned with sloping roofs echoing the rhythm of the hills. Experience a blend of nature and spatial grandeur perfect for families looking to reconnect.",
-    heroImage: "/family/family1.jpg",
+    heroImage: "/family/f (2).webp",
     gallery: [
       "/family/f (1).webp",
       "/family/f (2).webp",
