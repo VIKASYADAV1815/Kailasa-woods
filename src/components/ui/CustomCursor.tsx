@@ -5,22 +5,30 @@ import { motion } from "framer-motion";
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
+      setIsVisible(true);
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     
     const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (
-        target.closest('a') || 
-        target.closest('button') || 
-        target.closest('.hover-trigger') ||
-        window.getComputedStyle(target).cursor === 'pointer'
-      ) {
-        setIsHovering(true);
-      } else {
+      try {
+        const target = e.target as HTMLElement;
+        if (!target || typeof target.closest !== 'function') return;
+        
+        if (
+          target.closest('a') || 
+          target.closest('button') || 
+          target.closest('.hover-trigger') ||
+          window.getComputedStyle(target).cursor === 'pointer'
+        ) {
+          setIsHovering(true);
+        } else {
+          setIsHovering(false);
+        }
+      } catch (error) {
         setIsHovering(false);
       }
     };
@@ -33,6 +41,8 @@ export default function CustomCursor() {
       window.removeEventListener("mouseover", handleMouseOver);
     };
   }, []);
+
+  if (!isVisible) return null;
 
   return (
     <motion.div

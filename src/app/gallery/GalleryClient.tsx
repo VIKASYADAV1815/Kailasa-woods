@@ -113,12 +113,10 @@ export default function GalleryClient() {
     const absoluteIndex = allImages.indexOf(imageSrc);
     setCurrentIndex(absoluteIndex);
     setLightboxOpen(true);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
-    document.body.style.overflow = "auto";
   };
 
   const paginate = (newDirection: number) => {
@@ -139,7 +137,18 @@ export default function GalleryClient() {
       if (e.key === "Escape") closeLightbox();
     };
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    
+    if (lightboxOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "auto";
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lightboxOpen]);
 
   return (

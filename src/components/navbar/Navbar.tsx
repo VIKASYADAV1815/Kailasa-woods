@@ -20,10 +20,9 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // If we are on the gallery page, the hero isn't dark so we might want the text to be forest color initially
-  // but wait, the gallery page has a light background at the top. Let's force text-kw-forest if we are on gallery.
-  const isGallery = pathname === "/gallery";
-  const hasDarkHero = pathname === "/" || pathname === "/about" || pathname === "/stay" || pathname === "/contact" || pathname === "/gallery";
+  // Determine if the current page has a dark hero section.
+  // We exclude the home page ("/") here so that its navbar links default to the dark theme color (text-kw-forest).
+  const hasDarkHero = pathname === "/about" || pathname === "/stay" || pathname === "/contact" || pathname === "/gallery";
 
   useEffect(() => {
     const handleScroll = () => {

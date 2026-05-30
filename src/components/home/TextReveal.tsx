@@ -1,6 +1,15 @@
 "use client";
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+
+function Word({ children, progress, range }: { children: string, progress: MotionValue<number>, range: [number, number] }) {
+  const opacity = useTransform(progress, range, [0.15, 1]);
+  return (
+    <motion.span style={{ opacity }} className="text-kw-forest">
+      {children}
+    </motion.span>
+  );
+}
 
 export default function TextReveal() {
   const container = useRef<HTMLDivElement>(null);
@@ -19,12 +28,10 @@ export default function TextReveal() {
           {words.map((word, i) => {
             const start = i / words.length;
             const end = start + 1 / words.length;
-            // Map scroll progress to opacity for each word
-            const opacity = useTransform(scrollYProgress, [start, end], [0.15, 1]);
             return (
-              <motion.span key={i} style={{ opacity }} className="text-kw-forest">
+              <Word key={i} progress={scrollYProgress} range={[start, end]}>
                 {word}
-              </motion.span>
+              </Word>
             );
           })}
         </p>
