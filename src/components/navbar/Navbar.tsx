@@ -55,21 +55,22 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <div
+              <Link
+                href={link.href}
                 key={link.name}
-                className="text-sm uppercase tracking-widest font-medium opacity-40 cursor-not-allowed relative group overflow-hidden transition-opacity"
+                className="text-sm uppercase tracking-widest font-medium opacity-70 hover:opacity-100 relative group overflow-hidden transition-opacity"
               >
                 {link.name}
-              </div>
+              </Link>
             ))}
-            <button className={cn(
+            <Link href="/contact" className={cn(
               "px-6 py-2 border uppercase tracking-widest text-sm transition-colors duration-300",
               (isScrolled || mobileMenuOpen || !hasDarkHero)
                 ? "border-kw-forest text-kw-forest hover:bg-kw-forest hover:text-kw-offwhite" 
                 : "border-kw-offwhite text-kw-offwhite hover:bg-kw-offwhite hover:text-kw-forest"
             )}>
               Book Now
-            </button>
+            </Link>
           </nav>
 
           {/* Mobile Toggle */}
@@ -100,21 +101,29 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 * i, duration: 0.4 }}
                 >
-                  <div
-                    className="font-sans text-3xl md:text-4xl text-kw-forest/40 uppercase tracking-widest cursor-not-allowed"
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="font-sans text-3xl md:text-4xl text-kw-forest/70 hover:text-kw-forest uppercase tracking-widest transition-colors block"
                   >
                     {link.name}
-                  </div>
+                  </Link>
                 </motion.div>
               ))}
-              <motion.button
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.4 }}
-                className="mt-6 md:mt-8 px-8 py-3 bg-kw-forest text-kw-offwhite uppercase tracking-widest text-sm w-full max-w-xs"
+                className="mt-6 md:mt-8 w-full max-w-xs"
               >
-                Book Now
-              </motion.button>
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-center px-8 py-3 bg-kw-forest text-kw-offwhite uppercase tracking-widest text-sm w-full"
+                >
+                  Book Now
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}

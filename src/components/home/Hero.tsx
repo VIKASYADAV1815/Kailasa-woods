@@ -3,6 +3,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+import Link from "next/link";
+
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -61,14 +63,16 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.8 }}
           className="hidden gap-4"
         >
-          <motion.button 
-            whileHover={{ scale: 1.05, y: -5 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            className="px-8 py-3 bg-kw-offwhite text-kw-forest uppercase tracking-widest text-sm hover:bg-kw-beige transition-colors duration-300 shadow-xl"
-          >
-            Discover
-          </motion.button>
+          <Link href="/about">
+            <motion.button 
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="px-8 py-3 bg-kw-offwhite text-kw-forest uppercase tracking-widest text-sm hover:bg-kw-beige transition-colors duration-300 shadow-xl"
+            >
+              Discover
+            </motion.button>
+          </Link>
         </motion.div>
       </motion.div>
 
