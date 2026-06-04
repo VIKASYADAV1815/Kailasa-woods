@@ -16,15 +16,15 @@ export default function About() {
           {/* Text Content */}
           <div ref={ref} className="w-full lg:w-5/12 space-y-8">
             <div>
-              <span className="text-kw-sage tracking-widest uppercase text-sm mb-6 block font-medium">The Experience</span>
+              <span className="text-kw-sage tracking-widest uppercase text-sm mb-6 block font-medium">About Us</span>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="font-serif text-4xl md:text-5xl leading-tight"
               >
-                Kailasa Woods isn't just a place you see— <br />
-                <span className="italic text-kw-sage">it’s an atmosphere you feel.</span>
+                 Kailasa Woods  <br />
+                <span className="italic text-kw-sage"> A Luxury Farm Stay</span>
               </motion.h2>
             </div>
             
@@ -34,9 +34,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="space-y-5 text-sm md:text-base text-kw-forest/80 leading-relaxed font-sans"
             >
-              <p className="font-medium text-kw-forest">
-                Kailasa Woods: A Luxury Farm Stay
-              </p>
+             
               <p>
                 A hue that whispers of tranquility, renewal, and balance, inviting you to slow down and breathe deeply. This is the soul of Kailasa Woods—a farm-to-table luxury sanctuary nestled in the quiet, slow-paced village of Bharatwala, Bisht Gaon, right in the gentle foothills of Mussoorie. Here, nature and luxury meet in quiet harmony.
               </p>
