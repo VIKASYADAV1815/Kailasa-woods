@@ -10,7 +10,7 @@ export default function AboutPage() {
       <section className="relative h-[70vh] min-h-125 flex items-center justify-center overflow-hidden pt-24">
         <div className="absolute inset-0 z-0">
           <img
-            src="/main house/h (5).png"
+            src="/main house/h (6).png"
             alt="About Kailasa Woods"
             className="w-full h-full object-cover"
           />
@@ -31,17 +31,17 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-sans font-light tracking-wide text-4xl md:text-5xl lg:text-6xl text-kw-offwhite mb-6"
+            className="font-sans font-light tracking-wide text-3xl md:text-4xl lg:text-5xl text-kw-offwhite mb-6 leading-tight max-w-4xl mx-auto"
           >
-            Kailasa Woods is more <br className="hidden md:block" /> than a colour
+            Kailasa Woods isn't just a place you see; <br className="hidden md:block" /> it’s an atmosphere you feel.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-kw-sage text-xl md:text-2xl max-w-2xl mx-auto font-sans font-light tracking-widest uppercase"
+            className="text-kw-sage text-lg md:text-xl max-w-2xl mx-auto font-sans font-light tracking-wide"
           >
-            ...it's a feeling.
+            It is the quiet rustle of the bamboo forest, the warmth of old-world charm, and the luxury of unhurried time.
           </motion.p>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function AboutPage() {
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
             
             {/* Text Content */}
-            <div className="w-full lg:w-1/2 space-y-8">
+            <div className="w-full lg:w-1/2 space-y-8 flex flex-col justify-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -60,23 +60,14 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="space-y-6 text-base md:text-lg text-kw-forest/80 leading-relaxed font-sans"
               >
-                <p className="font-medium text-kw-forest text-xl md:text-2xl leading-snug">
-                  A farm to table luxury Farm Stay in the Foothills of Mussoorie, located in the slow-paced village of Bharatwala, Bisht Gaon.
-                </p>
-                
-                <div className="h-px w-24 bg-kw-sage/50 my-8" />
-                
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-kw-forest mb-6">
+                  Explore Our Estate
+                </h2>
                 <p>
-                  A hue that whispers of tranquillity, renewal, and balance, inviting you to slow down and breathe deeply. It’s the soul of this farm stay, where nature and luxury meet in quiet harmony.
+                  Set within a sprawling 45,000 sq. ft. estate, our property features 12,000 sq. ft. of elegant, theme-based concept living. Whether you are looking for an immersive playful escape or a quiet bamboo forest retreat, you'll find it here.
                 </p>
                 <p>
-                  Welcome to our serene farmstay, where comfort meets character in every corner. Nestled amidst greenery and bathed in natural light, this Cozy Farm Stay Retreat offers a perfect blend of natural charm and modern amenities. A space to reconnect with nature and yourself.
-                </p>
-                <p>
-                  Ideal for solo travellers, couples, or families seeking warmth, tranquillity, and time to themselves.
-                </p>
-                <p>
-                  Set within a 45,000 sq. ft estate, this farm stay offers 12,000 sq. ft of elegant construction, theme based concept living be it our Amazon Bus, Deodar Wood Cottage in Bamboo forest or our own Family Room in our Greek Architecture old charm house, crowned with sloping roofs that echo the rhythm of the hills.
+                  Discover the rhythm of the hills and step into our uniquely crafted accommodations.
                 </p>
                 
                 <div className="pt-8">

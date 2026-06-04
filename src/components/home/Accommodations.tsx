@@ -9,7 +9,7 @@ const roomAmenities = [
   "A cozy bed", "Smart TV", "Wifi", "Living Area", "Dining area", "Kitchenette", "Hot and Cold Air Conditioner", "Geyser", "Intercom"
 ];
 
-function AccommodationItem({ item, index, scrollYProgress, total }: { item: { details: string; title: string; description: string; heroImage: string }, index: number, scrollYProgress: MotionValue<number>, total: number }) {
+function AccommodationItem({ item, index, scrollYProgress, total }: { item: { details: string; title: string; description: string; heroImage: string; amenities?: string[] }, index: number, scrollYProgress: MotionValue<number>, total: number }) {
   const y = useTransform(scrollYProgress, [Math.max(0, (index - 1) / total), (index + 1) / total], ["-15%", "15%"]);
 
   return (
@@ -39,7 +39,7 @@ function AccommodationItem({ item, index, scrollYProgress, total }: { item: { de
           <div className="mb-10">
             <h4 className="text-xs uppercase tracking-widest text-kw-forest/50 mb-4">Room Includes</h4>
             <ul className="grid grid-cols-2 gap-y-2 gap-x-4">
-              {roomAmenities.slice(0, 6).map((amenity, i) => (
+              {(item.amenities || roomAmenities).map((amenity, i) => (
                 <li key={i} className="text-sm text-kw-forest/80 flex items-center gap-2">
                   <div className="w-1 h-1 rounded-full bg-kw-sage" />
                   {amenity}

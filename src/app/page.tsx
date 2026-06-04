@@ -21,7 +21,6 @@ export default function Home() {
       <Gallery />
       <Amenities />
       <LocationReachUs />
-      <Footer />
     </main>
   );
 }

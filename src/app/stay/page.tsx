@@ -100,7 +100,7 @@ export default function StayPage() {
                     <div className="mb-10">
                       <h4 className="text-xs uppercase tracking-widest text-kw-forest/50 mb-4">Room Includes</h4>
                       <ul className="grid grid-cols-2 gap-y-3 gap-x-4">
-                        {roomAmenities.map((amenity, i) => (
+                        {(item.amenities || roomAmenities).map((amenity, i) => (
                           <li key={i} className="text-sm text-kw-forest/80 flex items-center gap-2">
                             <div className="w-1.5 h-1.5 rounded-full bg-kw-sage" />
                             {amenity}

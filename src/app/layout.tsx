@@ -3,6 +3,7 @@ import "./globals.css";
 
 import SmoothScroll from "@/components/animations/SmoothScroll";
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 import CustomCursor from "@/components/ui/CustomCursor";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
         <SmoothScroll>
           <Navbar />
           {children}
+          <Footer />
         </SmoothScroll>
       </body>
     </html>

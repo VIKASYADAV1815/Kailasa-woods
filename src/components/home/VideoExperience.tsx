@@ -33,7 +33,7 @@ export default function VideoExperience() {
     <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
       <motion.div style={{ y, scale }} className="absolute inset-0 w-full h-[140%] top-[-20%]">
         <img
-          src="/videoimg.jpg"
+          src="/mandir bonfire/m (1).JPG"
           alt="Kailasa Temple Heritage"
           className="w-full h-full object-cover opacity-50"
         />
