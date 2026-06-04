@@ -46,20 +46,6 @@ export default function About() {
               <p>
                 Whether you are a solo traveler seeking solitude, a couple looking for a romantic escape, or a family wanting to slow down together, you will find warmth, peace, and the gift of unhurried time.
               </p>
-              <div className="pt-2">
-                <p className="font-medium text-kw-forest mb-2">The Estate</p>
-                <p>
-                  Set within a sprawling 45,000 sq. ft. estate, the property features 12,000 sq. ft. of elegant, theme-based concept living. Each space is crowned with sloping roofs that echo the gentle rhythm of the surrounding hills:
-                </p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
-                  <li><strong>The Amazon Bus:</strong> An immersive, playful escape.</li>
-                  <li><strong>The Deodar Wood Cottage:</strong> Tucked away in a quiet bamboo forest.</li>
-                  <li><strong>The Family Room:</strong> Housed within a Greek-inspired, old-charm homestead.</li>
-                </ul>
-                <p className="mt-4">
-                  Come experience the rhythm of the hills, where every detail invites you to rest, restore, and just be.
-                </p>
-              </div>
               
               <Link href="/about">
                 <motion.button 
