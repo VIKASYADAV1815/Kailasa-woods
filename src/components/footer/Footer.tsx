@@ -91,8 +91,14 @@ export default function Footer() {
           <div className="w-full flex flex-col md:flex-row justify-between items-center text-sm text-kw-offwhite/50 tracking-widest uppercase mt-12 pb-6 px-2">
             <p>&copy; {new Date().getFullYear()} Kailasa Woods.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="text-kw-offwhite/70 hover:text-kw-offwhite transition-colors">Instagram</a>
-              <a href="#" className="text-kw-offwhite/70 hover:text-kw-offwhite transition-colors">Facebook</a>
+              <a 
+                href="https://www.instagram.com/kailasawoods?igsh=ZThoN2FsZWd4cnBz" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-kw-offwhite/70 hover:text-kw-offwhite transition-colors"
+              >
+                Instagram
+              </a>
             </div>
             <p className="mt-4 md:mt-0">All Rights Reserved.</p>
           </div>
