@@ -36,10 +36,10 @@ export default function About() {
             >
              
               <p>
-                A hue that whispers of tranquility, renewal, and balance, inviting you to slow down and breathe deeply. This is the soul of Kailasa Woods—a farm-to-table luxury sanctuary nestled in the quiet, slow-paced village of Bharatwala, Bisht Gaon, right in the gentle foothills of Mussoorie. Here, nature and luxury meet in quiet harmony.
+                A hue that whispers of tranquility, renewal, and balance, inviting you to slow down and breathe deeply. This is the soul of Kailasa Woods—a farm-to-table luxury sanctuary nestled in the quiet, slow-paced village of Bharatwala, Bisht Gaon. Our biggest pride is our fresh-cooked organic food, with a complimentary breakfast service that brings the best of our farm straight to your table.
               </p>
               <p>
-                Welcome to a serene retreat where comfort meets character in every corner. Nestled amidst lush greenery and bathed in soft, natural light, this cozy haven offers a seamless blend of rustic charm and modern amenities. It is a space designed thoughtfully for you to reconnect with nature, and with yourself.
+                With a 12-hour running kitchen and 24/7 dining support, we ensure you are nourished at any hour. Experience the true taste of nature with ingredients harvested from our own gardens, prepared with love to offer a seamless blend of rustic charm and modern luxury.
               </p>
               <p>
                 Whether you are a solo traveler seeking solitude, a couple looking for a romantic escape, or a family wanting to slow down together, you will find warmth, peace, and the gift of unhurried time.

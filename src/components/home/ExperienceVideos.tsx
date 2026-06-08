@@ -19,7 +19,7 @@ export default function ExperienceVideos({ topSrc, bottomSrc }: Props) {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full h-[320px] md:h-[360px] lg:h-[320px] overflow-hidden rounded-sm bg-black"
+          className="relative w-full h-80 md:h-90 lg:h-80 overflow-hidden rounded-sm bg-black"
         >
           <video
             src={topSrc}
@@ -37,7 +37,7 @@ export default function ExperienceVideos({ topSrc, bottomSrc }: Props) {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full h-[320px] md:h-[360px] lg:h-[320px] overflow-hidden rounded-sm bg-black"
+          className="relative w-full h-80 md:h-90 lg:h-80 overflow-hidden rounded-sm bg-black"
         >
           <video
             src={bottomSrc}

@@ -4,15 +4,15 @@ import { motion, Variants } from "framer-motion";
 import { useState } from "react";
 
 const amenitiesList = [
-  { name: "Swimming pool", img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=800&auto=format&fit=crop" },
+  { name: "Farm-to-Table Organic Food", img: "/food/f (1).webp" },
+  { name: "Complimentary Breakfast", img: "/food/f (2).webp" },
+  { name: "24/7 Dining Support", img: "/food/f (3).webp" },
+  { name: "12-Hour Running Kitchen", img: "/food/f (4).webp" },
   { name: "Gym", img: "/gym/g (3).webp" },
-  { name: "Recreation Area (Pool Table, T.T. Table, Carrom, Dart, Board Games)", img: "/gym/g (1).webp" },
+  { name: "Recreation Area", img: "/gym/g (1).webp" },
+  { name: "Bon Fire", img: "/mandir bonfire/m (1).webp" },
   { name: "Library", img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=800&auto=format&fit=crop" },
-  { name: "Yoga Deck", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" },
   { name: "Wi-Fi", img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop" },
-  { name: "100% power backup", img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop" },
-  { name: "Car Park", img: "https://images.unsplash.com/photo-1470224114660-3f6686c562eb?q=80&w=800&auto=format&fit=crop" },
-  { name: "Bon Fire", img: "/mandir bonfire/_DSC8779.JPG" },
 ];
 
 const containerVariants: Variants = {
@@ -65,7 +65,7 @@ export default function Amenities() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-kw-forest/80 text-lg"
             >
-              Surrounding the home are beautiful garden and water bodies, organic grown vegetables and fruit bearing trees, lush and thoughtfully landscaped with love and passion. The garden wraps around the house, offering quiet pathways, shaded nooks, and a living connection to nature.
+              Beyond the luxury of our rooms, Kailasa Woods offers a curated selection of amenities designed for your comfort. From our 12-hour running kitchen serving fresh-cooked, farm-to-table organic meals to our 24/7 dining support, every detail is crafted to nourish your soul.
             </motion.p>
           </div>
           

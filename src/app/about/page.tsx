@@ -33,7 +33,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-sans font-light tracking-wide text-3xl md:text-4xl lg:text-5xl text-kw-offwhite mb-6 leading-tight max-w-4xl mx-auto"
           >
-            Kailasa Woods isn't just a place you see; <br className="hidden md:block" /> it’s an atmosphere you feel.
+            Kailasa Woods isn&apos;t just a place you see; <br className="hidden md:block" /> it&apos;s an atmosphere you feel.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -64,11 +64,22 @@ export default function AboutPage() {
                   Explore Our Estate
                 </h2>
                 <p>
-                  Set within a sprawling 45,000 sq. ft. estate, our property features 12,000 sq. ft. of elegant, theme-based concept living. Whether you are looking for an immersive playful escape or a quiet bamboo forest retreat, you'll find it here.
+                  Set within a sprawling 45,000 sq. ft. estate, our property features 12,000 sq. ft. of elegant, theme-based concept living. Whether you are looking for an immersive playful escape or a quiet bamboo forest retreat, you&apos;ll find it here.
                 </p>
                 <p>
-                  Discover the rhythm of the hills and step into our uniquely crafted accommodations.
+                  Discover the rhythm of the hills and step into our uniquely crafted accommodations. From our signature farm-to-table dining to the quiet rustle of the bamboo forest, every moment is an invitation to stay present.
                 </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                  <div className="space-y-2">
+                    <h4 className="font-serif text-xl text-kw-forest">Farm-to-Table</h4>
+                    <p className="text-sm">Organic, fresh-cooked meals sourced directly from our estate gardens. Our 12-hour kitchen ensures quality in every bite.</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-serif text-xl text-kw-forest">24/7 Support</h4>
+                    <p className="text-sm">Rounding out our hospitality is 24/7 dining support and our famous complimentary breakfast service.</p>
+                  </div>
+                </div>
                 
                 <div className="pt-8">
                   <Link href="/stay">

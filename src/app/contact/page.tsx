@@ -62,7 +62,7 @@ export default function ContactPage() {
               <div>
                 <h2 className="font-serif text-3xl md:text-4xl mb-8">Contact Information</h2>
                 <p className="text-kw-forest/80 leading-relaxed mb-12">
-                  Whether you have a question about our accommodations, organic farming, or you're ready to book your peaceful retreat, our team is ready to answer all your questions.
+                  Whether you have a question about our accommodations, organic farming, or you&apos;re ready to book your peaceful retreat, our team is ready to answer all your questions.
                 </p>
               </div>
 

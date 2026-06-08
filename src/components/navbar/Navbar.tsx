@@ -22,7 +22,7 @@ export default function Navbar() {
 
   // Determine if the current page has a dark hero section.
   // We exclude the home page ("/") here so that its navbar links default to the dark theme color (text-kw-forest).
-  const hasDarkHero = pathname === "/about" || pathname === "/stay" || pathname === "/contact" || pathname === "/gallery";
+  const hasDarkHero = pathname === "/about" || pathname === "/stay" || pathname === "/contact" || pathname === "/gallery" || pathname.startsWith("/stay/");
 
   useEffect(() => {
     const handleScroll = () => {

@@ -18,6 +18,11 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-kw-forest">
+      {/* Grain Overlay for Hero */}
+      <div 
+        className="pointer-events-none absolute inset-0 z-20 opacity-[0.15] mix-blend-overlay"
+        style={{ backgroundImage: 'url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png")' }}
+      />
       <motion.div
         style={{ y, scale }}
         className="absolute inset-0 h-full w-full"

@@ -1,16 +1,13 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, MotionValue, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { staysData as accommodations } from "@/data/stays";
+import { staysData as accommodations, commonAmenities, standardRoomAmenities } from "@/data/stays";
 
-const roomAmenities = [
-  "A cozy bed", "Smart TV", "Wifi", "Living Area", "Dining area", "Kitchenette", "Hot and Cold Air Conditioner", "Geyser", "Intercom"
-];
-
-function AccommodationItem({ item, index, scrollYProgress, total }: { item: { details: string; title: string; description: string; heroImage: string; amenities?: string[] }, index: number, scrollYProgress: MotionValue<number>, total: number }) {
+function AccommodationItem({ item, index, scrollYProgress, total }: { item: { details: string; title: string; description: string; heroImage: string; amenities: string[] }, index: number, scrollYProgress: MotionValue<number>, total: number }) {
   const y = useTransform(scrollYProgress, [Math.max(0, (index - 1) / total), (index + 1) / total], ["-15%", "15%"]);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div 
@@ -39,13 +36,46 @@ function AccommodationItem({ item, index, scrollYProgress, total }: { item: { de
           <div className="mb-10">
             <h4 className="text-xs uppercase tracking-widest text-kw-forest/50 mb-4">Room Includes</h4>
             <ul className="grid grid-cols-2 gap-y-2 gap-x-4">
-              {(item.amenities || roomAmenities).map((amenity, i) => (
+              {item.amenities.map((amenity, i) => (
                 <li key={i} className="text-sm text-kw-forest/80 flex items-center gap-2">
                   <div className="w-1 h-1 rounded-full bg-kw-sage" />
                   {amenity}
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className="mb-10 border-t border-kw-forest/20 pt-4 max-w-lg">
+            <button 
+              onClick={() => setIsOpen(!isOpen)}
+              className="w-full flex items-center justify-between text-left group"
+            >
+              <h4 className="text-xs uppercase tracking-widest text-kw-forest/80 font-bold group-hover:text-kw-sage transition-colors">
+                Standard & Common Amenities
+              </h4>
+              <span className="text-kw-forest/50 group-hover:text-kw-sage transition-colors text-lg">
+                {isOpen ? "−" : "+"}
+              </span>
+            </button>
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                  animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                  exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                  className="overflow-hidden"
+                >
+                  <ul className="grid grid-cols-2 gap-y-2 gap-x-4">
+                    {[...standardRoomAmenities, ...commonAmenities].map((amenity, i) => (
+                      <li key={i} className="text-sm text-kw-forest/80 flex items-center gap-2">
+                        <div className="w-1 h-1 rounded-full bg-kw-sage/50" />
+                        {amenity}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           <Link href={`/stay`}>

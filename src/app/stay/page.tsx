@@ -1,21 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { staysData as accommodations } from "@/data/stays";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { staysData as accommodations, commonAmenities, standardRoomAmenities } from "@/data/stays";
 import Link from "next/link";
 
-const roomAmenities = [
-  "A cozy bed", "Smart TV", "Wifi", "Living Area", "Dining area", "Kitchenette", "Hot and Cold Air Conditioner", "Geyser", "Intercom"
-];
-
 export default function StayPage() {
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+
   return (
     <main className="min-h-screen bg-kw-beige text-kw-forest">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-125 flex items-center justify-center overflow-hidden pt-24">
         <div className="absolute inset-0 z-0">
           <img
-            src="/main house/h (3).png"
+            src="/videoimg.jpg"
             alt="The Stay"
             className="w-full h-full object-cover"
           />
@@ -100,13 +99,46 @@ export default function StayPage() {
                     <div className="mb-10">
                       <h4 className="text-xs uppercase tracking-widest text-kw-forest/50 mb-4">Room Includes</h4>
                       <ul className="grid grid-cols-2 gap-y-3 gap-x-4">
-                        {(item.amenities || roomAmenities).map((amenity, i) => (
+                        {item.amenities.map((amenity, i) => (
                           <li key={i} className="text-sm text-kw-forest/80 flex items-center gap-2">
                             <div className="w-1.5 h-1.5 rounded-full bg-kw-sage" />
                             {amenity}
                           </li>
                         ))}
                       </ul>
+                    </div>
+
+                    <div className="mb-10 border-t border-kw-forest/20 pt-4">
+                      <button 
+                        onClick={() => setOpenDropdown(openDropdown === index ? null : index)}
+                        className="w-full flex items-center justify-between text-left group"
+                      >
+                        <h4 className="text-xs uppercase tracking-widest text-kw-forest/80 font-bold group-hover:text-kw-sage transition-colors">
+                          Standard & Common Amenities
+                        </h4>
+                        <span className="text-kw-forest/50 group-hover:text-kw-sage transition-colors text-lg">
+                          {openDropdown === index ? "−" : "+"}
+                        </span>
+                      </button>
+                      <AnimatePresence>
+                        {openDropdown === index && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                            animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                            exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <ul className="grid grid-cols-2 gap-y-3 gap-x-4">
+                              {[...standardRoomAmenities, ...commonAmenities].map((amenity, i) => (
+                                <li key={i} className="text-sm text-kw-forest/80 flex items-center gap-2">
+                                  <div className="w-1.5 h-1.5 rounded-full bg-kw-sage/50" />
+                                  {amenity}
+                                </li>
+                              ))}
+                            </ul>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
 
                     <Link href={`/stay/${item.id}`}>
@@ -125,6 +157,47 @@ export default function StayPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Common Amenities Section */}
+      <section className="py-24 bg-kw-offwhite relative">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px w-12 bg-kw-sage/50" />
+              <span className="text-xs uppercase tracking-widest text-kw-forest/50">Shared Spaces</span>
+              <div className="h-px w-12 bg-kw-sage/50" />
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 text-kw-forest">
+              Common Amenities & Recreation
+            </h2>
+            <p className="text-base md:text-lg text-kw-forest/80 leading-relaxed mb-16">
+              The common areas are an integral part of your stay at Kailasa Woods. Whether you want to stay active, relax with a book, or enjoy an evening by the bonfire, our shared spaces offer something for everyone.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-0 border-t border-kw-forest/10 mt-12 text-left">
+              {commonAmenities.map((amenity, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
+                  className="py-6 border-b border-kw-forest/10 flex items-center justify-between group hover:pl-4 transition-all duration-300"
+                >
+                  <h3 className="font-sans font-medium text-lg text-kw-forest group-hover:text-kw-sage transition-colors">{amenity}</h3>
+                  <div className="w-1.5 h-1.5 rounded-full bg-kw-sage opacity-0 group-hover:opacity-100 transition-opacity" />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
     </main>

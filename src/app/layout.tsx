@@ -19,11 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth antialiased">
       <body className="bg-kw-offwhite text-kw-forest min-h-screen flex flex-col font-sans selection:bg-kw-sage selection:text-kw-offwhite md:cursor-none relative">
-        {/* Global Grain Overlay (Hero style) */}
-        <div 
-          className="pointer-events-none fixed inset-0 z-[9999] opacity-[0.15] mix-blend-overlay"
-          style={{ backgroundImage: 'url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png")' }}
-        />
         <CustomCursor />
         <SmoothScroll>
           <Navbar />

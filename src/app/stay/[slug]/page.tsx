@@ -1,8 +1,9 @@
-import { staysData } from "@/data/stays";
+import { staysData, commonAmenities, standardRoomAmenities } from "@/data/stays";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import StayBookingWrapper from "@/components/stay/StayBookingWrapper";
+import StayGallery from "@/components/stay/StayGallery";
 
 export function generateStaticParams() {
   return staysData.map((stay) => ({
@@ -69,6 +70,21 @@ export default async function StayDetailPage({ params }: { params: Promise<{ slu
                 </li>
               ))}
             </ul>
+            
+            <details className="mt-12 group border-t border-kw-forest/10 pt-8">
+              <summary className="text-sm uppercase tracking-widest text-kw-sage mb-4 font-medium text-center cursor-pointer list-none flex items-center justify-center gap-2 hover:text-kw-forest transition-colors">
+                <span>Standard & Common Amenities</span>
+                <span className="text-lg group-open:rotate-180 transition-transform duration-300">↓</span>
+              </summary>
+              <ul className="grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-4 mt-8">
+                {[...standardRoomAmenities, ...commonAmenities].map((amenity, idx) => (
+                  <li key={idx} className="flex items-center gap-3 text-kw-forest/80">
+                    <div className="w-1.5 h-1.5 rounded-full bg-kw-sage/50 shrink-0" />
+                    <span className="text-sm md:text-base">{amenity}</span>
+                  </li>
+                ))}
+              </ul>
+            </details>
           </div>
 
           <StayBookingWrapper stayTitle={stay.title} />
@@ -83,21 +99,7 @@ export default async function StayDetailPage({ params }: { params: Promise<{ slu
             <p className="text-kw-forest/70 uppercase tracking-widest text-xs">Glimpses of your stay</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {stay.gallery.map((imgSrc, index) => (
-              <div 
-                key={index} 
-                className={`relative overflow-hidden group rounded-sm ${index === 0 ? 'md:col-span-2 md:row-span-2 h-[50vh] md:h-[80vh]' : 'h-[40vh]'}`}
-              >
-                <img 
-                  src={imgSrc} 
-                  alt={`${stay.title} gallery image ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
-              </div>
-            ))}
-          </div>
+          <StayGallery gallery={stay.gallery} title={stay.title} />
         </div>
       </section>
     </main>

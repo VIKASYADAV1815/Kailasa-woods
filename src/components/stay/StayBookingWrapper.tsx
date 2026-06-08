@@ -16,12 +16,15 @@ export default function StayBookingWrapper({ stayTitle }: Props) {
       <div className="flex justify-center w-full mt-16 mb-8 relative z-20">
         <motion.button 
           onClick={() => setIsPopupOpen(true)}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-12 py-5 bg-kw-forest text-kw-offwhite hover:bg-kw-sage transition-colors duration-300 uppercase tracking-widest text-base font-bold shadow-2xl relative overflow-hidden group"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="group relative overflow-hidden px-14 py-5 bg-kw-forest text-kw-offwhite uppercase tracking-widest text-sm font-bold shadow-xl hover:shadow-2xl transition-all duration-500 rounded-sm"
         >
-          <span className="relative z-10">Reserve {stayTitle}</span>
-          <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:animate-shine" />
+          <span className="relative z-10 flex items-center gap-3">
+            <span>Reserve {stayTitle}</span>
+            <span className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">→</span>
+          </span>
+          <div className="absolute inset-0 bg-kw-sage opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-0" />
         </motion.button>
       </div>
 
@@ -83,8 +86,12 @@ export default function StayBookingWrapper({ stayTitle }: Props) {
                     </div>
                   </div>
 
-                  <button type="submit" className="w-full py-4 mt-8 bg-kw-forest text-kw-offwhite hover:bg-kw-sage transition-colors duration-300 uppercase tracking-widest text-sm font-bold shadow-lg">
-                    Submit Request
+                  <button type="submit" className="w-full relative group overflow-hidden py-4 mt-8 bg-kw-forest text-kw-offwhite uppercase tracking-widest text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-500 rounded-sm">
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      <span>Submit Request</span>
+                      <span className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">→</span>
+                    </span>
+                    <div className="absolute inset-0 bg-kw-sage opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-0" />
                   </button>
                 </form>
               </div>
