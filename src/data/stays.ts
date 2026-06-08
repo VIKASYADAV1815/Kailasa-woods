@@ -39,16 +39,16 @@ export const staysData = [
   },
   {
     id: "bamboo-stay",
-    title: "The Deodar Wood Cottage",
-    description: "A Deodar Wood Cottage set amidst a lush bamboo forest, now featuring a private garden balcony and indoor pantry for ultimate comfort and privacy.",
-    fullDescription: "Immerse yourself in nature with The Deodar Wood Cottage. This beautiful cottage is set right in the heart of a lush bamboo forest. It was constructed with the authenticity of natural materials in mind, offering a living connection to the surrounding environment. The cottage now boasts a private garden balcony and an indoor pantry, alongside its private Jacuzzi for ultimate relaxation. Enjoy stunning views of the manicured gardens, dense forest trees, and our thriving farm vegetables right from your window.",
+    title: "The Bamboo Cottage",
+    description: "A serene Bamboo Cottage set amidst a lush bamboo forest, now featuring a private garden balcony and indoor pantry for ultimate comfort and privacy.",
+    fullDescription: "Immerse yourself in nature with The Bamboo Cottage. This beautiful cottage is set right in the heart of a lush bamboo forest. It was constructed with the authenticity of natural materials in mind, offering a living connection to the surrounding environment. The cottage now boasts a private garden balcony and an indoor pantry, alongside its private Jacuzzi for ultimate relaxation. Enjoy stunning views of the manicured gardens, dense forest trees, and our thriving farm vegetables right from your window.",
     heroImage: "/bamboo/bamboo.webp",
     gallery: [
       "/bamboo/b (1).webp",
       "/bamboo/b (2).webp",
       "/bamboo/video.webp"
     ],
-    details: "Deodar Wood • Private Garden Balcony • Jacuzzi",
+    details: "Bamboo Forest • Private Garden Balcony • Jacuzzi",
     amenities: ["A cozy bed", "Private Jacuzzi", "Private Garden Balcony", "Indoor Pantry", "Bamboo Forest View", "Living Area"]
   },
   {
